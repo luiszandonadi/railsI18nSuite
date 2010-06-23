@@ -49,8 +49,15 @@ public final class AutoCompleteHelpTopComponent extends TopComponent implements 
 
     public AutoCompleteHelpTopComponent() {
         initComponents();
-        setName(NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "CTL_AutoCompleteHelpTopComponent"));
-        setToolTipText(NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "HINT_AutoCompleteHelpTopComponent"));
+        setName(JavaI18N.getValue("CTL_AutoCompleteHelpTopComponent"));
+        setToolTipText(JavaI18N.getValue("HINT_AutoCompleteHelpTopComponent"));
+
+        labelFile.setText(JavaI18N.getValue("AutoCompleteHelpTopComponent.labelFile.text"));
+        labelKey.setText(JavaI18N.getValue("AutoCompleteHelpTopComponent.labelKey.text"));
+        labelValue.setText(JavaI18N.getValue("AutoCompleteHelpTopComponent.labelValue.text"));
+        buttonSave.setText(JavaI18N.getValue("AutoCompleteHelpTopComponent.buttonSave.text"));
+//        setName(NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "CTL_AutoCompleteHelpTopComponent"));
+//        setToolTipText(NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "HINT_AutoCompleteHelpTopComponent"));
         setIcon(ImageUtilities.loadImage(ICON_PATH, true));
 
         this.addComponentListener(new ComponentListener() {
@@ -187,41 +194,40 @@ public final class AutoCompleteHelpTopComponent extends TopComponent implements 
 
         jPanel1 = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        labelKey = new javax.swing.JLabel();
+        buttonSave = new javax.swing.JButton();
+        labelValue = new javax.swing.JLabel();
         textFieldValue = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        labelFile = new javax.swing.JLabel();
         textFieldKey = new javax.swing.JTextField();
         labelOutput = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.jLabel1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(labelKey, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.labelKey.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.jButton1.text")); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        org.openide.awt.Mnemonics.setLocalizedText(buttonSave, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.buttonSave.text")); // NOI18N
+        buttonSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonSaveActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.jLabel3.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(labelValue, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.labelValue.text")); // NOI18N
 
         textFieldValue.setText(org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.textFieldValue.text")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.jLabel4.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(labelFile, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.labelFile.text")); // NOI18N
 
         textFieldKey.setText(org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.textFieldKey.text")); // NOI18N
 
-        labelOutput.setFont(new java.awt.Font("DejaVu Sans", 1, 12)); // NOI18N
+        labelOutput.setFont(new java.awt.Font("DejaVu Sans", 1, 12));
         labelOutput.setForeground(new java.awt.Color(0, 102, 153));
         org.openide.awt.Mnemonics.setLocalizedText(labelOutput, org.openide.util.NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "AutoCompleteHelpTopComponent.labelOutput.text")); // NOI18N
 
@@ -232,16 +238,16 @@ public final class AutoCompleteHelpTopComponent extends TopComponent implements 
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(labelKey)
+                    .addComponent(labelValue)
+                    .addComponent(labelFile))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(labelOutput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(textFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(151, 151, 151)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textFieldValue, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(185, Short.MAX_VALUE))
@@ -252,15 +258,15 @@ public final class AutoCompleteHelpTopComponent extends TopComponent implements 
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(labelFile))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(labelKey)
                     .addComponent(textFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(labelValue)
                     .addComponent(textFieldValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(labelOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,7 +292,8 @@ public final class AutoCompleteHelpTopComponent extends TopComponent implements 
 
         } catch (Exception e) {
             jComboBox1.removeItem(selectedItem);
-            String message = NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "yaml_message_error");
+//            String message = NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "yaml_message_error");
+            String message = JavaI18N.getValue("yaml_message_error");
             labelOutput.setText(message + selectedItem + "!!!");
             new Timer(20000, new ActionListener() {
 
@@ -299,19 +306,20 @@ public final class AutoCompleteHelpTopComponent extends TopComponent implements 
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveActionPerformed
         // TODO add your handling code here:
         FilePOJO selectedItem = (FilePOJO) jComboBox1.getSelectedItem();
         Service.getInstance().saveValueOfYaml(textFieldKey.getText(), textFieldValue.getText(), yaml, selectedItem.getFile());
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonSaveActionPerformed
 
     private void setStateComponents(boolean b) {
         if (b) {
             labelOutput.setText("");
         } else {
-            String message = NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "select_project");
-            labelOutput.setText(message);
+//            String message = NbBundle.getMessage(AutoCompleteHelpTopComponent.class, "select_project");
+//            labelOutput.setText(message);
+            labelOutput.setText(JavaI18N.getValue("select_project"));
         }
         Component[] components = jPanel1.getComponents();
         for (Component elem : components) {
@@ -319,13 +327,13 @@ public final class AutoCompleteHelpTopComponent extends TopComponent implements 
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton buttonSave;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelFile;
+    private javax.swing.JLabel labelKey;
     private javax.swing.JLabel labelOutput;
+    private javax.swing.JLabel labelValue;
     private javax.swing.JTextField textFieldKey;
     private javax.swing.JTextField textFieldValue;
     // End of variables declaration//GEN-END:variables

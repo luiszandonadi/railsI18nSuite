@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="org-nbrails-AutoCompleteHelpAction.instance">
+                <attr name="component" methodvalue="org.nbrails.AutoCompleteHelpTopComponent.findInstance"/>
+                <attr name="displayName" bundlevalue="org.nbrails.Bundle#CTL_AutoCompleteHelpAction"/>
+                <attr name="iconBase" stringvalue="org/nbrails/flag_green.png"/>
+                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="AutoCompleteHelpAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/org-nbrails-AutoCompleteHelpAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="AutoCompleteHelpTopComponent.settings" url="AutoCompleteHelpTopComponentSettings.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="output">
+                <file name="AutoCompleteHelpTopComponent.wstcref" url="AutoCompleteHelpTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>
